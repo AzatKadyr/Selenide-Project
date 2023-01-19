@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import kz.elquaty.FirstPage;
 import org.testng.annotations.Test;
 
@@ -10,6 +11,7 @@ public class FirstTest {
 //aaa
     @Test
     public void testStart() throws InterruptedException {
+        Configuration.headless = true;
         open(BASE_URL);
         test.insertLogin(LOGIN);
         test.insertPassword(PASSWORD);
