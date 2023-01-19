@@ -7,7 +7,7 @@ import static kz.elquaty.Constants.*;
 public class FirstTest {
 
     FirstPage test = new FirstPage();
-
+//aaa
     @Test
     public void testStart() throws InterruptedException {
         open(BASE_URL);
