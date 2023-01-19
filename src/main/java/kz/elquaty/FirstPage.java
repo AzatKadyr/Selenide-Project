@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class FirstPage {
 
+    //a
     private SelenideElement inputLogin = $(By.name("acount"));
     private SelenideElement inputPassword = $(By.name("password"));
     private SelenideElement authButton = $(By.xpath("//button[@type='submit']"));
