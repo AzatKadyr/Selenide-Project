@@ -11,10 +11,11 @@ public class FirstTest {
     @Test
     public void testStart() throws InterruptedException {
         open(BASE_URL);
-        test.inputLogin().setValue(LOGIN);
-        test.inputPassword().setValue(PASSWORD);
-        test.authButton().click();
-        test.CabinetLink().click();
+        test.insertLogin(LOGIN);
+        test.insertPassword(PASSWORD);
+        test.clickAuthBtn();
+        test.clickCabinetLink();
         Thread.sleep(10000);
+        test.getInformation();
     }
 }
