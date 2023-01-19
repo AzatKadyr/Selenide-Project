@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class FirstPage {
 
+    Utils utils = new Utils();
     //aaa
     private SelenideElement inputLogin = $(By.name("acount"));
     private SelenideElement inputPassword = $(By.name("password"));
@@ -33,10 +34,11 @@ public class FirstPage {
         CabinetLink.shouldBe(Condition.visible).click();
     }
 
-    public void getInformation(){
+    public void getInformation() throws Exception {
         System.out.println(userName.getText());
         System.out.println(personalAccount.getText());
         System.out.println(userStatus.getText());
+        utils.getpost(userName.getText());
     }
 
 }

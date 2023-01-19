@@ -10,7 +10,7 @@ public class FirstTest {
     FirstPage test = new FirstPage();
 //aaa
     @Test
-    public void testStart() throws InterruptedException {
+    public void testStart() throws Exception {
         Configuration.headless = true;
         open(BASE_URL);
         test.insertLogin(LOGIN);
