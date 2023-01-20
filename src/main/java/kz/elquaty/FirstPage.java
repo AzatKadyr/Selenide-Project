@@ -17,6 +17,11 @@ public class FirstPage {
     private SelenideElement userName = $(By.xpath("//div[@class='name-user']"));
     private SelenideElement personalAccount = $(By.xpath("(//div[@class='name-user'])[2]"));
     private SelenideElement userStatus = $(By.xpath("(//div[@class='name-user'])[3]"));
+    private SelenideElement acceptBtn = $(By.id("vote-accept"));
+    private SelenideElement readBtn = $(By.xpath("//a[text()='ﬂ œ–Œ◊»“¿À —ŒŒ¡Ÿ≈Õ»≈']"));
+
+
+
 
     public void insertLogin(String login) {
         inputLogin.shouldBe(Condition.visible).setValue(login);
@@ -38,7 +43,14 @@ public class FirstPage {
         System.out.println(userName.getText());
         System.out.println(personalAccount.getText());
         System.out.println(userStatus.getText());
-        utils.getpost(userName.getText());
+        utils.getpost(userName.getText()+"   "+personalAccount.getText()+" œÓ„ÓÎÓÒÓ‚‡Î (-‡)");
+    }
+
+    public void assertVote(){
+        System.out.println(readBtn.shouldBe(Condition.visible).isDisplayed());
+        readBtn.shouldBe(Condition.visible).click();
+        sleep(10000);
+        acceptBtn.shouldBe(Condition.visible).click();
     }
 
 }

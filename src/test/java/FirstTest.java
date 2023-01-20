@@ -8,10 +8,11 @@ import static kz.elquaty.Constants.*;
 public class FirstTest {
 
     FirstPage test = new FirstPage();
-//aaa
+
     @Test
-    public void testStart() throws Exception {
-        Configuration.headless = true;
+    public void voteUser() throws Exception {
+        Configuration.headless = false;
+        Configuration.pageLoadTimeout = 100000;
         open(BASE_URL);
         test.insertLogin(LOGIN);
         test.insertPassword(PASSWORD);
@@ -19,5 +20,10 @@ public class FirstTest {
         test.clickCabinetLink();
         Thread.sleep(10000);
         test.getInformation();
+        test.assertVote();
+    }
+
+    public void startTest(){
+
     }
 }
