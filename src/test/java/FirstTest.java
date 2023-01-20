@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import kz.elquaty.FirstPage;
 import org.testng.annotations.Test;
 
@@ -9,7 +10,9 @@ public class FirstTest {
     FirstPage test = new FirstPage();
 
     @Test
-    public void testStart() throws InterruptedException {
+    public void voteUser() throws Exception {
+        Configuration.headless = false;
+        Configuration.pageLoadTimeout = 100000;
         open(BASE_URL);
         test.insertLogin(LOGIN);
         test.insertPassword(PASSWORD);
@@ -17,5 +20,10 @@ public class FirstTest {
         test.clickCabinetLink();
         Thread.sleep(10000);
         test.getInformation();
+        test.assertVote();
+    }
+
+    public void startTest(){
+
     }
 }
