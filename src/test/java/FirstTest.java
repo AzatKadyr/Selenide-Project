@@ -18,12 +18,8 @@ public class FirstTest {
         test.insertPassword(PASSWORD);
         test.clickAuthBtn();
         test.clickCabinetLink();
-        Thread.sleep(10000);
         test.getInformation();
         test.assertVote();
     }
 
-    public void startTest(){
-
-    }
 }
